@@ -23,7 +23,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter{
 	public void addViewControllers(ViewControllerRegistry r) {
 		r.addViewController("/layout").setViewName("layout");
 //		r.addViewController("/").setViewName("dashboard");
-//		r.addViewController("/admin").setViewName("dashboard");
+//		r.addViewController("/admin").setViewName("dashboard"); 
 	}
 	
 	@Override

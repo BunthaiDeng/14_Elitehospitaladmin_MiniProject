@@ -27,6 +27,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter{
 //		r.addViewController("/admin").setViewName("dashboard"); 
 	}
 	
+	//skdfjksdjfldsfjsjdlkfsjdkfjlkdsflksdlf
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry r) {
 		/*I should research more about path*/

@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.hrd.spring.model.User;
 import com.hrd.spring.service.UserService;
 
-import groovyjarjarantlr.collections.List;
 
 @Controller
 public class MainController {

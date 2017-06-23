@@ -14,14 +14,14 @@
 			<div class="container-fluid">
 			      <div class="row bg-title">
 			        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-			          <h4 class="page-title">Basic Table</h4>
+			          <h4 class="page-title"​ th:text="#{userlistpagetitle}">Basic Table</h4>
 			        </div>
 			        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 			          <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
 			          <ol class="breadcrumb">
-			            <li><a href="#">Dashboard</a></li>
-			            <li><a href="#">Table</a></li>
-			            <li class="active">Basic Table</li>
+			            <li><a href="#" th:text="#{dashboard}">Dashboard</a></li>
+			            <li><a href="#" th:text="#{userlisttable}">Table</a></li>
+			            <li class="active" th:text="#{userlistpagetitle}">Basic Table</li>
 			          </ol>
 			        </div>
 			        <!-- /.col-lg-12 -->
@@ -30,20 +30,36 @@
 			      <div class="row">
 			        <div class="col-sm-12">
 			          <div class="white-box">
-			            <h3 class="box-title">Basic Table</h3>
-			            <p class="text-muted">Add class <code>.table</code></p>
+			            <h3 class="box-title" th:text="#{userlist}">User List</h3>
 			            <div class="table-responsive">
 			              <table class="table">
 			                <thead>
 			                  <tr>
 			                    <th>#</th>
 			                    <th th:inline="text"><b>[[#{name}]]</b></th>
-			                    <th th:inline="text""><b>[[#{sex}]]</b></th>
-			                    <th th:inline="text"><b>[[#{dob}]]</b></th>
-			                    <th th:inline="text"><b>[[#{role}]]</b></th>
+			                    <th th:inline="text"><b>[[#{email}]]</b></th>
+			                    <th th:inline="text"><b>[[#{gender}]]</b></th>
+			                    <th th:inline="text"><b>[[#{phonenumber}]]</b></th>
+			                    <th th:inline="text""><b>[[#{status}]]</b></th>
+			                    <th th:inline="text"><b>[[#{action}]]</b></th>
 			                  </tr>
 			                </thead>
 			                <tbody>
+			                
+			                <tr th:each="user : ${data}">
+			                	<td th:text="${user.id}"></td>
+			                	<td th:text="${user.username}"></td>
+			                	<td th:text="${user.email}"></td>
+			                	<td th:text="${user.gender}"></td>
+			                	<td th:text="${user.phonenumber}"></td>
+			                	<td th:text="${user.status}"></td>
+								<td><a th:text="#{delete}" th:href="@{{userhash}(userhash=${user.userhash})}">Delete</a> | 
+								    <a th:text="#{update}" th:href="@{user-update/{n}/{e}/{g}/{p}/{userhash}(n=${user.username},e=${user.email},g=${user.gender},p=${user.phonenumber},userhash=${user.userhash})}">Update</a> | 
+								    <a th:text="#{detail}" th:href="@{user-profile/{n}/{e}/{g}/{p}/{userhash}(n=${user.username},e=${user.email},g=${user.gender},p=${user.phonenumber},userhash=${user.userhash})}">Detail</a>
+							    </td>
+			                </tr>
+			                
+			                <!-- 
 			                  <tr th:each="user : ${data}">
 			                    <td th:text="${user.ID}"></td>
 			                    <td th:text="${user.Name}"></td>
@@ -55,7 +71,7 @@
 			                    <td th:if="${user.Role}=='Supporter'"><span class="label label-success">Supporter</span></td>
 			                    
 			                  </tr>
-
+								-->
 			                </tbody>
 			              </table>
 			            </div>

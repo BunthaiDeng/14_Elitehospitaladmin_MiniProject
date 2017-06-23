@@ -14,14 +14,14 @@
 			<div class="container-fluid">
 			      <div class="row bg-title">
 			        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-			          <h4 class="page-title">Basic Table</h4>
+			          <h4 class="page-title" th:text="#{dashboardpagetitle}">Basic Table</h4>
 			        </div>
 			        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 			          <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
 			          <ol class="breadcrumb">
-			            <li><a href="#">Dashboard</a></li>
-			            <li><a href="#">Table</a></li>
-			            <li class="active">Basic Table</li>
+			            <li><a href="#" th:text="#{dashboard}">Dashboard</a></li>
+			            <li><a href="#" th:text="#{userlisttable}">Table</a></li>
+			            <li class="active" th:text="#{dashboardpagetitle}">Basic Table</li>
 			          </ol>
 			        </div>
 			        <!-- /.col-lg-12 -->
@@ -30,8 +30,7 @@
 			      <div class="row">
 			        <div class="col-sm-12">
 			          <div class="white-box">
-			            <h3 class="box-title">Basic Table</h3>
-			            <p class="text-muted">Add class <code>.table</code></p>
+
 			            <div class="table-responsive">
 			              <table class="table">
 			                <thead>
@@ -39,18 +38,17 @@
 			                    <th>#</th>
 			                    <th th:inline="text"><b>[[#{name}]]</b></th>
 			                    <th th:inline="text"><b>[[#{surname}]]</b></th>
-			                    <th th:inline="text"><b>[[#{role}]]</b></th>
+			                    <th th:inline="text"><b>[[#{gender}]]</b></th>
 			                  </tr>
 			                </thead>
 			                <tbody>
 			                  <tr th:each="user : ${data}">
-			                    <td th:text="${user.ID}"></td>
-			                    <td th:text="${user.Name}"></td>
-			                    <td th:inline="text">@[[${user.Name}]]</td>
-			                    <td th:if="${user.Role}=='Admin'"><span class="label label-danger">Admin</span></td>
-			                    <td th:if="${user.Role}=='Member'"><span class="label label-info">Member</span></td>
-			                    <td th:if="${user.Role}=='Developer'"><span class="label label-warning">Developer</span></td>
-			                    <td th:if="${user.Role}=='Supporter'"><span class="label label-success">Supporter</span></td>
+			                    <td th:text="${user.id}"></td>
+			                    <td th:text="${user.username}"></td>
+			                    <td th:inline="text">@[[${user.username}]]</td>
+			                    <td th:if="${user.gender}=='F'"><span class="label label-danger">Female</span></td>
+			                    <td th:if="${user.gender}=='M'"><span class="label label-info">Male</span></td>
+			                    
 			                    
 			                  </tr>
 

@@ -14,8 +14,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
-//ikhgiuiuyiuiu
-//ikhgiuiuyiuiu
+
 @Configuration
 @EnableWebMvc
 public class WebConfiguration extends WebMvcConfigurerAdapter{

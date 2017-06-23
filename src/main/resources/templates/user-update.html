@@ -16,8 +16,8 @@
                         <h4 class="page-title" th:text="#{adduser}">Add User</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
                         <ol class="breadcrumb">
-                            <li><a href="index.html"​ th:text="#{hospital}">Hospital</a></li>
-                            <li class="active" th:text="#{adduser}">Add User</li>
+                            <li><a href="index.html " th:text="#{hospital}">Hospital</a></li>
+                            <li class="active" th:text="#{adduser}">Add Patient</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -25,15 +25,23 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <form action="/user-cu" method="post" th:object="${User}" class="form-material form-horizontal">
-                                                    
+                            <h3 class="box-title">Basic Information</h3>
+                            <form action="/user-update" method="post" th:object="${User}" class="form-material form-horizontal">
+                            
+                                <div class="form-group">
+                                    <label th:inline="text" class="col-md-12" for="example-text">
+                                    	<b>[[#{userhash}]]</b>
+                                    </label>
+                                    <div class="col-md-12">
+                                        <input type="text" id="example-text" th:attr="value=${userhash}" name="userhash" class="form-control" readonly="readonly" placeholder="enter your user hash"> </div>
+                                </div>                            	                        
                             
                                 <div class="form-group">
                                     <label th:inline="text" class="col-md-12" for="example-text">
                                     	<b>[[#{name}]]</b>
                                     </label>
                                     <div class="col-md-12">
-                                        <input type="text" id="example-text" name="username" class="form-control" placeholder="enter your name"> </div>
+                                        <input type="text" id="example-text" th:attr="value=${username}" name="username" class="form-control" placeholder="enter your name"> </div>
                                 </div>
                                 
                                 <div class="form-group">
@@ -41,7 +49,7 @@
                                     	<b>[[#{email}]]</b>
                                     </label>
                                     <div class="col-md-12">
-                                        <input type="text" id="example-text" name="email" class="form-control" placeholder="enter your email"> </div>
+                                        <input type="text" id="example-text" th:attr="value=${email}" name="email" class="form-control" placeholder="enter your email"> </div>
                                 </div>                                
                                 
                                 <div class="form-group">
@@ -49,8 +57,8 @@
                                     <div class="col-sm-12">
                                         <select class="form-control" name="gender">
                                             <option>Select Gender</option>
-                                            <option>M</option>
-                                            <option>F</option>
+                                            <option th:attr="selected = ${gender}=='M' ? 'selected'">M</option>
+                                            <option th:attr="selected = ${gender}=='F' ? 'selected'">F</option>
                                         </select>
                                     </div>
                                 </div>                                
@@ -60,11 +68,11 @@
                                     	<b>[[#{phonenumber}]]</b>
                                     </label>
                                     <div class="col-md-12">
-                                        <input type="text" id="example-text" name="phonenumber" class="form-control" placeholder="enter your phone"> </div>
+                                        <input type="text" id="example-text" th:attr="value=${phonenumber}" name="phonenumber" class="form-control" placeholder="enter your phone"> </div>
                                 </div>                                                              
                                 
 
-                                <button th:text="#{submit}" type="submit" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
+                                <button th:text="#{update}" type="submit" class="btn btn-info waves-effect waves-light m-r-10">Update</button>
                                 <button th:text="#{cancel}" type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
                             </form>
                         </div>

@@ -13,11 +13,11 @@
 	<div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Add Patient</h4> </div>
+                        <h4 class="page-title" th:text="#{addrole}">Add Role</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
                         <ol class="breadcrumb">
-                            <li><a href="index.html">Hospital</a></li>
-                            <li class="active">Add Role</li>
+                            <li><a href="index.html" th:text="#{hospital}">Hospital</a></li>
+                            <li class="active" th:text="#{addrole}">Add Role</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Basic Information</h3>
+
                             <form class="form-material form-horizontal">
                                 <div class="form-group">
                                     <label th:inline="text" class="col-md-12" for="example-text">
@@ -55,8 +55,9 @@
                                         <textarea class="form-control" rows="3"></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
-                                <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+                                
+                                <button th:text="#{submit}" type="submit" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
+                                <button th:text="#{cancel}" type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
                             </form>
                         </div>
                     </div>

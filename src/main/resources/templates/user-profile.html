@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="@{/layout}"
+>
+	<head>
+		<title>User Profile</title>
+	</head>
+	
+	<body>
+		<div layout:fragment="content" id="page-wrapper">
+
+			<div class="container-fluid">
+			      <div class="row bg-title">
+			        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			          <h4 class="page-title" th:text="#{dashboardpagetitle}">Basic Table</h4>
+			        </div>
+			        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+			          <a href="" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
+			          <ol class="breadcrumb">
+			            <li><a href="#" th:text="#{dashboard}">Dashboard</a></li>
+			            <li><a href="#" th:text="#{userlisttable}">Table</a></li>
+			            <li class="active" th:text="#{dashboard}">Basic Table</li>
+			          </ol>
+			        </div>
+			      </div>
+
+
+				<div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" th:text="#{profileview}"> Form with Only view</div>
+                            <div class="panel-wrapper collapse in" aria-expanded="true">
+                                <div class="panel-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-body">
+                                            <h3 class="box-title" th:text="#{person}">Person Info</h3>
+                                            <hr class="m-t-0 m-b-40">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3"​​ th:text="#{name}">User Name:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static" th:text="${username}"> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3" th:text="#{email}">E-mail:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static" th:text="${email}"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3" th:text="#{gender}">Gender:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static" th:text="${gender}"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3" th:text="#{phonenumber}">Phone:</label>
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static" th:text="${phonenumber}"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->      
+                                      
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+			      
+			      
+		    </div> <!-- container-fluid -->
+	
+		</div><!-- content and page-wrapper -->
+		
+
+	</body>
+</html>

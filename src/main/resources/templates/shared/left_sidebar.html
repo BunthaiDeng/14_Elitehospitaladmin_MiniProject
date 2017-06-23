@@ -23,11 +23,12 @@
 	             </li>
 	             
 	            <li class="nav-small-cap m-t-10">--- Main Menu</li>
-	            <li> <a href="dashboard.html" th:class=" ${page}!='dashboard' ? 'waves-effect' : 'waves-effect active'"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-				<li> <a href="user-list.html" th:class=" ${page}!='userlist' ? 'waves-effect' : 'waves-effect active'"><i class="ti-list p-r-10"></i> <span class="hide-menu">User List</span></a> </li>
-				<li> <a href="user-cu.html" th:class=" ${page}!='usercu' ? 'waves-effect' : 'waves-effect active'"><i class="ti-user p-r-10"></i> <span class="hide-menu">User CU</span></a> </li>
-				<li> <a href="role-list.html" th:class=" ${page}!='rolelist' ? 'waves-effect' : 'waves-effect active'"><i class="ti-settings p-r-10"></i> <span class="hide-menu">Role List</span></a> </li>
-				<li> <a href="role-cu.html" th:class=" ${page}!='rolecu' ? 'waves-effect' : 'waves-effect active'"><i class="ti-star p-r-10"></i> <span class="hide-menu">Role CU</span></a> </li>
+	            <li> <a href="/dashboard" th:class=" ${page}!='dashboard' ? 'waves-effect' : 'waves-effect active'"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+				<li> <a href="/user-list" th:class=" ${page}!='userlist' ? 'waves-effect' : 'waves-effect active'"><i class="ti-list p-r-10"></i> <span class="hide-menu">User List</span></a> </li>
+				<li> <a href="/user-cu" th:class=" ${page}!='usercu' ? 'waves-effect' : 'waves-effect active'"><i class="ti-user p-r-10"></i> <span class="hide-menu">User Create</span></a> </li>
+				<!-- <li> <a href="user-update.html" th:class=" ${page}!='userupdate' ? 'waves-effect' : 'waves-effect active'"><i class="ti-user p-r-10"></i> <span class="hide-menu">User Update</span></a> </li> -->
+				<li> <a href="/role-list" th:class=" ${page}!='rolelist' ? 'waves-effect' : 'waves-effect active'"><i class="ti-settings p-r-10"></i> <span class="hide-menu">Role List</span></a> </li>
+				<li> <a href="/role-cu" th:class=" ${page}!='rolecu' ? 'waves-effect' : 'waves-effect active'"><i class="ti-star p-r-10"></i> <span class="hide-menu">Role CU</span></a> </li>
 				<!--  =============-->
 			</ul>
 		</div>

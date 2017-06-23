@@ -13,14 +13,41 @@ import com.hrd.spring.service.UserService;
 @Service("userServiceImpl")
 public class UserServiceImpl implements UserService{
 	
-	@Autowired
-	@Qualifier("userRepositoryImpl")
+	
 	UserRepository userRepository;
 	
-	
+	@Autowired
+	public UserServiceImpl(UserRepository userRepository) {
+		super();
+		this.userRepository = userRepository;
+	}
+
+
 	@Override
 	public ArrayList<User> findAllUser() {
 		return userRepository.findAllUser();
 	}
+
+
+	@Override
+	public boolean addUser(User user) {
+		return userRepository.addUser(user);
+	}
+
+
+	@Override
+	public boolean updateUser(User user) {
+		return userRepository.updateUser(user);
+	}
+
+
+	@Override
+	public boolean deleteUser(String userhash) {
+		return userRepository.deleteUser(userhash);
+	}
+
+
+	
+	
 
 }
